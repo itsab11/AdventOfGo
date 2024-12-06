@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
 	"slices"
@@ -29,12 +28,8 @@ func main() {
 			isLeft = true // so it alternates between left and right
 		}
 	}
-	slices.SortFunc(left, func(a, b int) int {
-		return cmp.Compare(a, b)
-	})
-	slices.SortFunc(right, func(a, b int) int {
-		return cmp.Compare(a, b)
-	})
+	slices.Sort(left)
+	slices.Sort(right)
 	total_difference := 0
 	for i := range left {
 		diff := right[i] - left[i]
