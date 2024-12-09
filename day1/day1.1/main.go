@@ -10,7 +10,7 @@ import (
 
 func main() {
 	var left, right []int
-	inputfile, err := os.Open("input")
+	inputfile, err := os.Open("../input")
 	if err != nil {
 		fmt.Println(err)
 	}
